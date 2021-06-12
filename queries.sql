@@ -19,5 +19,17 @@ weekly_sales FLOAT,
 unnoficial_holiday VARCHAR
 );
 
+CREATE TABLE stores (
+store_id INT,
+store_type CHAR,
+store_size INT
+);
+
+CREATE TABLE bball (
+
+);
+
+
+
 
 
