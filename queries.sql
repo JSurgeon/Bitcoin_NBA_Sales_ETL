@@ -1,5 +1,4 @@
 CREATE TABLE features (
-id INT PRIMARY KEY,
 week INT,
 date DATE,
 store_id INT,
@@ -7,7 +6,6 @@ temperature_far FLOAT,
 temperature_celsius FLOAT,
 fuel_price FLOAT,
 cpi FLOAT,
-is_holiday BOOLEAN,
 unemployment FLOAT,
 bitcoin_price FLOAT
 );
