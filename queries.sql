@@ -11,11 +11,11 @@ bitcoin_price FLOAT
 );
 
 CREATE TABLE sales (
-store_id INT,
-dept_num INT,
-week DATE,
+store INT,
+date DATE,
+dept INT,
 weekly_sales FLOAT,
-unnoficial_holiday VARCHAR
+unofficial_holiday VARCHAR
 );
 
 CREATE TABLE games (
@@ -28,11 +28,8 @@ visitor_team_name VARCHAR
 );
 
 CREATE TABLE stores (
-store_id INT,
-store_type CHAR,
-store_size INT
+store INT,
+type CHAR,
+size INT
 );
-
-
-
 
