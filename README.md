@@ -4,8 +4,17 @@
 Our original data sources were .csv files downloaded from a few datasets on Kaggle.com and one from investing.com.
 
 ## Transform: 
-We loaded in our files, converted them to DataFrames, and began to clean up the files.
-We knew our tables would join on the Date fields most efficiently so we converted those fields to a consistent format. We dropped columns that were not neccessary, and rows we didn't need. 
+We loaded in our files, converted them to DataFrames, and began to clean up the files. We knew our tables would join on the Date fields most efficiently so we made sure to normalize those fields across our data.
+
+#### Games Tables
+
+#### Bitcoin Data and Features Table
+Wanted to add in the average Bitcoin price to the Features Table that also held market information—like temp, fuel price, unemployement and the CPI to compare to sales data. Took the Bitcoin data and turned it into a DataFrame, used to_datetime to convert the date column for yyyy-mm-dd format (did same for the date in Features and Sales Dataframes). Dropped columns I didn't need, and created a new column with the rolling 7-day average for Bitcoin. Then I could merge this with the Features Table to create a Bitcoin column that would match up with the weekly dates.
+
+#### Holiday and Sales Table
+
+#### Store Table
+Created a DataFrame.
 
 ## Load: 
 We had created an initial schema for our SQL database before we started, and once we had transformed our data we confirmed everything matched up and created the tables in SQL and loaded in our data. We joined the tables to show they would be able to be queried effectively. 
