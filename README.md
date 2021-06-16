@@ -8,8 +8,11 @@ We loaded in our files, converted them to DataFrames, and began to clean up the 
 
 #### Games Tables
 We weren't interested in anything but the days the game were played on, any information about the history of a team, nor any information about the head coach, owner, general manager, etc. So, we had to drop all columns from the teams dataframe besides Team ID, Nickname, and City. It further seemed easier to concatenate nickname and city, so we transformed those columns into one on the teams dataframe- after this was done we could safely drop the nickname and city, since they now existed together in one column "team_name".
+
 For the games dataframe, we again had to drop columns that we weren't interested in. This required a single drop statement with a list of all the columns we wanted to remove: game_status, season #, and all information about the performance of the team (we simply wanted what days games were played on, the game id, and who played in the games. Thus, GAME_DATE_EST, GAME_ID, HOME_TEAM_ID, AND VISITOR_TEAM_ID were left in the table. We needed team_ids to eventually join this games dataframe with the teams dataframe.
+
 We only wanted one dataframe/table for the NBA games, so we had to merge the games and teams dataframe as mentioned previously. Doing so required two steps: 1) merging the two dataframe on home_team_id while making sure to label the new frames that came in as "home_team_name" and then 2) merging again, this time on visitor_team_id making sure to label appropriately. This couldn't be completed in one merge because of the nature of basketball games- i.e., the team_ids from the teams dataframe existed twice in the games dataframe- once for the home team and once for the away team. These merges created an extra column for team_id_x and y, so those needed dropped once the merges were complete.
+
 Last steps were to rename the columns to match our SQL schema, turn the dates into a datetime object (they were strings). And finally, we decided we only cared about Portland Trailblazer games in 2011, so two ilocs were performed to grab first the home games they played and then the away games played and a simple comparison of the date (i.e., ==2011) to narrow the results.
 
 #### Bitcoin Data and Features Table
