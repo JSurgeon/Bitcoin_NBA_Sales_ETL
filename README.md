@@ -1,4 +1,4 @@
-# project2
+# Bitcoin_Sales_NBA_ETL
 
 ## Extract:
 Our original data sources were .csv files downloaded from a few datasets on Kaggle.com and one from investing.com.
